@@ -36,6 +36,19 @@ export const getAllPost = async (numberLimit) => {
   }
 }
 
+export const getPost = async (id) => {
+  try {
+    const res = await axios.get(`${urlBase}/post/${id}`, {
+      headers: {
+        'app-id': appId
+      }
+    })
+    return res
+  } catch (err) {
+    console.log(`err calling getAllPost in api ${err}`);
+  }
+}
+
 
 export const login = async (form) => {
   try {
